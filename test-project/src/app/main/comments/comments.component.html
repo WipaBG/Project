@@ -1,0 +1,12 @@
+<p>comments works!</p>
+<div *ngFor="let comment of comments" class="user">
+    <div class="container">
+        <h3>{{comment.recipeId.name}}</h3>
+        <p>{{comment.userId.username}}</p>
+        <p>{{comment.created_on}}</p>
+    </div>
+</div>
+<!-- <div>
+    <app-home/>
+    <app-comments/>
+</div> -->

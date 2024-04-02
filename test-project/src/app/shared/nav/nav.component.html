@@ -1,0 +1,43 @@
+<header>
+    <div class="mini-navbar-wrap">
+        <div class="logo-wrap">
+            <p class="logo"><span class="logo">CookBook</span></p>
+        </div>
+        <div *ngIf="!isLoggedin" class="mini-navbar">
+            <ul>
+                <li>
+                    <a routerLink="/login">Login</a>
+                </li>
+                <li>
+                    <a routerLink="/register">Register</a>
+                </li>
+            </ul>
+        </div>
+        <div  *ngIf="isLoggedin" class="mini-navbar">
+            <ul>
+                
+                <li>
+                    <a>Logout</a>
+                </li>
+
+                <li class ="profile">
+                    <a>Profile</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li>
+                <a routerLink="/home">Home</a>
+            </li>
+            <li>
+                <a routerLink="/recipes">Recipes</a>
+            </li>
+            <li>
+                <a routerLink="/add-recipe">Add recipe</a>
+            </li>
+        </ul>
+    </nav>
+
+</header>
