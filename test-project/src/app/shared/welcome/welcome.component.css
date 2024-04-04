@@ -1,0 +1,40 @@
+div h3{
+    margin: 0.5em 0 0.5em 0;
+    padding: 0;
+}
+.welcome-msg{
+    padding: 0.3em 0.2em;
+    width: 60%;
+}
+.log-reg-buttons ul{
+    display: flex;
+    justify-content: flex-start;
+    gap: 10em;
+
+    /* justify-content: space-evenly; */
+}
+
+.log-reg-buttons ul li.register{
+    background-color: yellow;
+    color: rgb(111, 36, 250);
+}
+
+.log-reg-buttons ul li.register a{
+    color: rgb(111, 36, 250);
+}
+
+
+.log-reg-buttons ul li{
+    border: 2px solid rgb(160, 17, 243);
+    padding: 0.5em 3em;
+    border-radius: 10%;
+    background-color:rgb(111, 36, 250);
+    list-style: none;
+}
+
+.log-reg-buttons ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+

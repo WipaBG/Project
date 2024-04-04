@@ -2,11 +2,12 @@ import { Recipe } from "./recipe";
 import { User } from "./user";
 
 export interface Comment{
-    likes:string[];
     _id:string[];
-    userId:User;
+    _ownderId:User;
+    content: string,
     recipeId:Recipe;
-    created_on:string;
+    _createdOn:string;
+    likes:string[];
     updatedAt:string;
     __v:number;
 

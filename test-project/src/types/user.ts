@@ -1,6 +1,8 @@
+import { Comment } from "./comment";
+
 export interface User{
     recipes: string[],
-        comments:[string][],
+        comments:Comment[],
         _id: string;
         tel: string;
         email: string;
@@ -13,6 +15,7 @@ export interface User{
 }
 
 export interface UserForAuth{
+    id:string,
     firstName:string,
     email:string,
     phoneNuber:string,

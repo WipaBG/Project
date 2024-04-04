@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
+import { UserService } from 'src/app/user/user.service';
 import { Recipe } from 'src/types/recipe';
 
 @Component({
@@ -9,14 +10,42 @@ import { Recipe } from 'src/types/recipe';
 })
 export class RecipesComponent implements OnInit{
   recipes: Recipe[] = [];
+  isLoading: boolean = true;
 
-  constructor(private api: ApiService){}
+  constructor(private api: ApiService, private userService: UserService){}
+
+    
+  get isLoggedIn():boolean{
+    return this.userService.isLogged;
+  }
+
+  get userId():string{
+    return this.userService.user?.id || '';
+  }
+
+
+
   ngOnInit(): void {
     this.api.getRecipes().subscribe(recipes=>{
       console.log(recipes)
       this.recipes = recipes;
     })
   }
+
+
+  // isLiked(recipe: Recipe){
+  //   const isLikedUser = recipe.likes.find((s)=> {
+  //     console.log({s, id: this.userService.user?.id})
+
+  //     return s===this.userService.user?.id;
+  //   });
+  //   console.log({isLikedUser: !!isLikedUser});
+
+  //   return !!isLikedUser;
+
+  // }
+
+
 
 }
  

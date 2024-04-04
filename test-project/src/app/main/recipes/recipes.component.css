@@ -4,5 +4,5 @@ button{
     background: none;
 }
 button:focus{
-    color: red;
+    color: rgb(15, 134, 31);
 }

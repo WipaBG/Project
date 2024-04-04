@@ -7,6 +7,7 @@ import { RecipeRoutingModule } from './recipes-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { CurrentRecipeComponent } from './current-recipe/current-recipe.component';
+import { MainContentComponent } from './main-content/main-content.component';
 
 
 @NgModule({
@@ -15,11 +16,12 @@ import { CurrentRecipeComponent } from './current-recipe/current-recipe.componen
     RecipesComponent,
     AddRecipeComponent,
     CurrentRecipeComponent,
+    MainContentComponent,
     
   ],
   imports: [
     CommonModule, RecipeRoutingModule, SharedModule
   ],
-  exports:[HomeComponent]
+  exports:[HomeComponent,MainContentComponent]
 })
 export class MainModule { }

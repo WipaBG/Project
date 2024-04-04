@@ -1,13 +1,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <section>
+    <app-welcome *ngIf="!isLoggedIn"/>
     <div *ngFor="let recipe of recipes" class="recipe-list"> 
-        <h3><a routerLink="current-theme">{{recipe.name}}</a></h3>
-        <h4>{{recipe.owner_id}}</h4>
-        <p>{{recipe.imgUrl}}</p>
-        <p>{{recipe.ingredients}}</p>
-        <p>Septs: {{recipe.steps}}</p>
-        <button><i class="fa fa-thumbs-up" style="font-size:48px"></i></button>
+        <h3><a [routerLink]="recipe._id">{{recipe.name}}</a></h3>
+
+
+
+        <!-- <button *ngIf="isLiked(recipe)  && !isLiked(recipe)" ><i class="fa fa-thumbs-up" style="font-size:48px"></i></button> -->
+        <!-- <button *ngIf="isLoggedIn && isLiked(recipe)" ><i class="fa fa-thumbs-down" style="font-size:48px"></i></button> -->
+
+
+
         <p>Likes : {{recipe.likes?.length || 0}}</p>
         <a href="">{{recipe.comments}}</a>
         <p>Created at: {{recipe._createdOn | date}}</p>

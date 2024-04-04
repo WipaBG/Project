@@ -3,7 +3,7 @@
         <div class="logo-wrap">
             <p class="logo"><span class="logo">CookBook</span></p>
         </div>
-        <div *ngIf="!isLoggedin" class="mini-navbar">
+        <div *ngIf="!isLoggnedIn" class="mini-navbar">
             <ul>
                 <li>
                     <a routerLink="/login">Login</a>
@@ -13,16 +13,17 @@
                 </li>
             </ul>
         </div>
-        <div  *ngIf="isLoggedin" class="mini-navbar">
+        <div  *ngIf="isLoggnedIn" class="mini-navbar">
             <ul>
                 
-                <li>
+                <li class ="profile">
+                    <a>{{firstName}}'s Profile</a>
+                </li>
+                
+                <li (click) = "logout()">
                     <a>Logout</a>
                 </li>
 
-                <li class ="profile">
-                    <a>Profile</a>
-                </li>
             </ul>
         </div>
     </div>

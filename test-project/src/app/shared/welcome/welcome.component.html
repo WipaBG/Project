@@ -1,0 +1,11 @@
+<div class="welcome-msg">
+    <h3>Welcome</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora est odit sequi vero minus id voluptates voluptatum numquam animi libero quisquam, nihil facilis architecto veritatis optio voluptatibus atque repellat tempore.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit tenetur provident dolores id eum animi placeat neque saepe nostrum quaerat a molestiae voluptatibus suscipit iste, sapiente, voluptate officia laudantium qui!</p>
+    
+</div>
+<div *ngIf="!isLoggedIn"class = "log-reg-buttons">
+    <ul>
+        <li class="login"><a routerLink="/login">Login</a></li>
+        <li class="register"><a routerLink="/register">Register</a></li>
+    </ul>
+</div>

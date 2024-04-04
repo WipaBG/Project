@@ -1,1 +1,47 @@
-<p>add-recipe works!</p>
+<div class="container">
+    <div class="new-recipe-border">
+        <div class="header-background">
+            <span>New recipe</span>
+        </div>
+        <form>
+
+
+            <div class="new-recipe-title">
+                <label for="recipeName">Title</label>
+                <input type="text" 
+                name="recipeName" 
+                id="recipeName"
+                #inputRecipeName>
+            </div>
+
+
+            <div class="new-recipe-ingredients">
+                <label for="ingredientsText">Ingredients</label>
+                <textarea type="text" 
+                name="postText" 
+                id="postText"
+                rows="8" 
+                class="height"
+                #textAreaIngredients>
+            </textarea>
+            </div>
+
+            <div class="new-recipe-steps">
+                <label for="stepsText">Steps</label>
+                <textarea type="text" 
+                name="postText" 
+                id="postText"
+                rows="8" 
+                class="height"
+                #textAreaSteps>
+            </textarea>
+            </div>
+        
+            <div class="new-recipe-buttons">
+                <button class="cancel">Cancel</button>
+                <button class="public" (click)="addRecipe($event, inputRecipeName.value, textAreaIngredients.value, textAreaSteps.value)">Post</button>
+            </div>
+        
+     </form>
+</div>
+</div>

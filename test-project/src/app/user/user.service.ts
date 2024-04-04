@@ -5,14 +5,13 @@ import { UserForAuth } from 'src/types/user';
   providedIn: 'root'
 })
 export class UserService {
-  user: UserForAuth | undefined
+  user: UserForAuth | undefined;
   USER_KEY = '[user]';
+
 
   get isLogged():boolean{
     return !!this.user;
   }
-
-
 
   constructor() { 
     try{
@@ -27,6 +26,7 @@ export class UserService {
 
   login(){
     this.user = {
+      id: '35c62d76-8152-4626-8712-eeb96381bea8',
       firstName: 'Petko',
       email: 'petkoivanov@abv.bg',
       password:'123123',

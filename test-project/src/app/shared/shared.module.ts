@@ -4,6 +4,7 @@ import { NavComponent } from './nav/nav.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { ErrorComponent } from '../error/error.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 
@@ -11,11 +12,12 @@ import { ErrorComponent } from '../error/error.component';
   declarations: [
     NavComponent,
     FooterComponent,
-    ErrorComponent
+    ErrorComponent,
+    WelcomeComponent
   ],
   imports: [
     CommonModule, RouterModule
   ],
-  exports:[NavComponent, FooterComponent]
+  exports:[NavComponent, FooterComponent, WelcomeComponent]
 })
 export class SharedModule { }
