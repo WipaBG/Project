@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { CurrentRecipeComponent } from './current-recipe/current-recipe.component';
 import { MainContentComponent } from './main-content/main-content.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,10 +18,11 @@ import { MainContentComponent } from './main-content/main-content.component';
     AddRecipeComponent,
     CurrentRecipeComponent,
     MainContentComponent,
+
     
   ],
   imports: [
-    CommonModule, RecipeRoutingModule, SharedModule
+    CommonModule, RecipeRoutingModule, SharedModule,FormsModule
   ],
   exports:[HomeComponent,MainContentComponent]
 })

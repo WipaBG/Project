@@ -18,6 +18,7 @@ export class ApiService {
 
   getComment(limit?: number){
     const {apiUrl} = environment;
+    
     let url = `${apiUrl}/comments`
     if(limit){
       url += `?limit=${limit}`

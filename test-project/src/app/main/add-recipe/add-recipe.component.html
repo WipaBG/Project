@@ -3,7 +3,7 @@
         <div class="header-background">
             <span>New recipe</span>
         </div>
-        <form>
+        <form #form ="ngForm" (ngSubmit)="addRecipe(form)" >
 
 
             <div class="new-recipe-title">
@@ -11,9 +11,20 @@
                 <input type="text" 
                 name="recipeName" 
                 id="recipeName"
-                #inputRecipeName>
+                #inputRecipeName="ngModel"
+                ngModel
+                required
+                minlength="5">
+                <ng-container *ngIf="inputRecipeName?.touched">
+                    <p class="error" *ngIf="inputRecipeName?.errors?.['required']">
+                        The field with your recipe is requried
+                    </p>
+                    <p class="error"*ngIf="inputRecipeName?.errors?.['minlength']">
+                        The recipe name must be at leat 5 characters long
+                    </p>
+                </ng-container>
             </div>
-
+    
 
             <div class="new-recipe-ingredients">
                 <label for="ingredientsText">Ingredients</label>
@@ -22,24 +33,47 @@
                 id="postText"
                 rows="8" 
                 class="height"
-                #textAreaIngredients>
+                #textAreaIngredients="ngModel"
+                ngModel>
             </textarea>
+            
+            <ng-container *ngIf="textAreaIngredients?.touched">
+                <p class="error" *ngIf="textAreaIngredients?.errors?.['required']">
+                    The field with your recipe is requried
+                </p>
+            </ng-container>
             </div>
+
+
+       
 
             <div class="new-recipe-steps">
                 <label for="stepsText">Steps</label>
                 <textarea type="text" 
                 name="postText" 
                 id="postText"
-                rows="8" 
+                rows=5
                 class="height"
-                #textAreaSteps>
+                #textAreaSteps="ngModel"
+                required
+                ngModel
+                minlength="5">
             </textarea>
+            <ng-container *ngIf="textAreaSteps?.touched">
+                <p class="error" *ngIf="textAreaSteps?.errors?.['required']">
+                    The field with your steps is requried
+                </p>
+                <p class="error"*ngIf="textAreaSteps?.errors?.['minlength'] && !textAreaSteps?.errors?.['required']">
+                    Recipe steps part must be at leat 5 characters long
+                </p>
+            </ng-container>
             </div>
+
+        
         
             <div class="new-recipe-buttons">
                 <button class="cancel">Cancel</button>
-                <button class="public" (click)="addRecipe($event, inputRecipeName.value, textAreaIngredients.value, textAreaSteps.value)">Post</button>
+                <button class="public" (click)="addRecipe(form)">Post</button>
             </div>
         
      </form>

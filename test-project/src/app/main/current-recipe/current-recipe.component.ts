@@ -11,6 +11,7 @@ import { Recipe } from 'src/types/recipe';
 })
 export class CurrentRecipeComponent implements OnInit{
   recipe={} as Recipe
+  comments: Comment[]=[];
 
 
   constructor(private apiService: ApiService, private activeRoute: ActivatedRoute){}
@@ -18,7 +19,13 @@ export class CurrentRecipeComponent implements OnInit{
   ngOnInit(): void {
     this.activeRoute.params.subscribe((data)=>{
       const id = data['recipeId'];
+      
+     this.apiService.getComment(id).subscribe((comments)=>{
+      this.comments = comments;
 
+      console.log({comments})
+     })
+      
       this.apiService.getRecipe(id).subscribe((recipe)=>{
       this.recipe = recipe;
 

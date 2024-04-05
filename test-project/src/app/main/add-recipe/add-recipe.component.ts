@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { tap } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
 import { Recipe } from 'src/types/recipe';
@@ -11,16 +12,14 @@ import { Recipe } from 'src/types/recipe';
 export class AddRecipeComponent{
   constructor(private apiService:ApiService){}
 
-
-
    
 
-  addRecipe(ev:Event, recipeName:string, recipeIngredients:string, recipeSteps:string ){
-    ev.preventDefault();
-    console.log({recipeName, recipeIngredients, recipeSteps});
+  addRecipe(form:NgForm){
+    if(form.invalid){
+      return;
+    }
+    console.log(form.value)
 
-    this.apiService.createRecipe(recipeName, recipeIngredients, recipeSteps).pipe(tap((data)=>{
-      console.log({data});
-    }))
+
   }
 }

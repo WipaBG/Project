@@ -3,7 +3,7 @@ import { User } from "./user";
 
 export interface Comment{
     _id:string[];
-    _ownderId:User;
+    _ownerId:User;
     content: string,
     recipeId:Recipe;
     _createdOn:string;

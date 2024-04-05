@@ -1,16 +1,53 @@
 
-<section id="login">
-    <div class="form">
-      <h2>Login</h2>
-      <form class="login-form">
+  <div class="form">
+    
+    <form class="login-form" #form = "ngForm" (ngSubmit)="login(form)">
+      <!-- <fieldset> -->
+        <h2>Login</h2>
+
         <input type="text" name="email" id="email" placeholder="email"
-        #inputEmail>
+        ngModel
+        #inputEmail="ngModel"
+        required
+        [appEmail]="domains"
+       >
+
+        <!-- {{inputEmail.errors?.['required'] | json}} -->
+
+        <ng-container *ngIf="inputEmail.touched">
+          <p class="error" *ngIf="inputEmail.errors?.['required']">Email is required!</p>
+          <p class="error" *ngIf="inputEmail.errors?.['emailValidtor']"
+        >Email is not valid!</p>
+
+        </ng-container>
+
+
         <input type="password" name="password" id="password" placeholder="password"
-        #inputPassword>
-        <button (click)="login($event,inputEmail.value, inputPassword.value)" type="submit">login</button>
+        ngModel
+        #inputPassword="ngModel"
+        required
+        minlength="6">
+
+        <ng-container *ngIf="inputPassword.touched">
+          <p class="error" *ngIf="inputPassword.errors?.['required']">
+            Password is required!
+          </p>
+          <p class="error" *ngIf="inputPassword.errors?.['minlength']">
+            Password must be ta least 6 characters
+          </p>
+        </ng-container>
+       
+
+        <button [disabled]="form.invalid" [style]="">LOGIN</button>
+
         <p class="message">
-          Not registered? <a routerLink="/register">Create an account</a>
+          Don't have an account? <a routerLink="/register">Create an account</a>
         </p>
+      <!-- </fieldset> -->
+        
+
+
+
       </form>
+
     </div>
-</section>

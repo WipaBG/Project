@@ -6,6 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { UserRoutingModule } from './user-routing.module';
 
 
@@ -18,7 +20,7 @@ import { RouterModule } from '@angular/router';
        ProfileComponent
   ],
   imports: [
-    UserRoutingModule, RouterModule
+    UserRoutingModule, RouterModule,CommonModule,SharedModule,FormsModule,ReactiveFormsModule
   ],
   exports:[
   ]

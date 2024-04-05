@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 import { Comment } from 'src/types/comment';
 
+
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',

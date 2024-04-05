@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { ErrorComponent } from '../error/error.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { EmailDirective } from './validators/email.directive';
 
 
 
@@ -13,11 +14,12 @@ import { WelcomeComponent } from './welcome/welcome.component';
     NavComponent,
     FooterComponent,
     ErrorComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    EmailDirective,
   ],
   imports: [
     CommonModule, RouterModule
   ],
-  exports:[NavComponent, FooterComponent, WelcomeComponent]
+  exports:[NavComponent, FooterComponent, WelcomeComponent, EmailDirective]
 })
 export class SharedModule { }
