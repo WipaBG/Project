@@ -5,8 +5,6 @@ export function matchPassworsValidator(passwordControl:string, rePasswordControl
         const passFirstControl = control.get(passwordControl);
         const passSecondControl = control.get(rePasswordControl);
         const areMatching = passFirstControl?.value == passSecondControl?.value;
-        console.log({passFirstControl,passSecondControl})
-        console.log('Are matching', {areMatching});
 
 
         return areMatching ? null : {matchPassworsValidator:true};

@@ -11,16 +11,20 @@ import { EMAIL_DOMAINS } from 'src/constants';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  domains = EMAIL_DOMAINS
+  domains = EMAIL_DOMAINS;
+
   constructor(private userService:UserService, private router:Router){}
 
   login(form:NgForm){
-    console.log(form.value)
     if(form.invalid){
       return;
     }
 
-    this.userService.login();
-    this.router.navigate(['home']);
+    const {email, password} = form.value;
+
+    this.userService.login(email, password).subscribe(()=>{
+      this.router.navigate(['/recipes']);
+
+    })
   }
 }
