@@ -1,11 +1,11 @@
 <div class="container">
     <div class="new-recipe-border">
-        <div class="header-background">
-            <span>New recipe</span>
-        </div>
+       
         <form #form ="ngForm" (ngSubmit)="addRecipe(form)" >
 
-
+            <div class="header-background">
+                <span>NEW RECIPE</span>
+            </div>
             <div class="new-recipe-title">
                 <label for="recipeName">Title</label>
                 <input type="text" 
@@ -29,8 +29,8 @@
             <div class="new-recipe-ingredients">
                 <label for="ingredientsText">Ingredients</label>
                 <textarea type="text" 
-                name="postText" 
-                id="postText"
+                name="ingredientsText"
+                id="ingredientsText"
                 rows="8" 
                 class="height"
                 #textAreaIngredients="ngModel"
@@ -50,8 +50,8 @@
             <div class="new-recipe-steps">
                 <label for="stepsText">Steps</label>
                 <textarea type="text" 
-                name="postText" 
-                id="postText"
+                name="stepsText" 
+                id="stepsText"
                 rows=5
                 class="height"
                 #textAreaSteps="ngModel"

@@ -1,1 +1,59 @@
-<p>profile works!</p>
+<div class="container">
+    <div class="profile">
+        <h3>User Info:</h3>
+      
+        <!-- READL ONLY MODE -->
+        <ng-container *ngIf="!showEditMode">
+            
+            <div class="flex">
+                <p>Username: </p>
+                <p>{{profileDetails.username}}</p>
+
+                
+            </div>
+            <div class="flex">
+                <p>Email: </p>
+                <p>{{profileDetails.email}}</p>
+            </div>
+     
+            <button class="edit-button" (click)="onToggle()">Edit</button>
+        </ng-container>
+
+
+        <!-- EDIT MODE -->
+        <ng-container *ngIf="showEditMode">
+
+            <form [formGroup]="form" (ngSubmit)="saveProfileHandler()">
+                <div class="flex">
+                    <p>Username: </p>
+                    <input type="text" name="username" id="username"
+                    formControlName="username"
+                    [value]="profileDetails.username"
+                   >
+                   <ng-container *ngIf="form.get('username')?.touched">
+                    <p *ngIf="form.get('username')?.errors?.['required']" class="error">Username is required!</p>
+                    <p *ngIf="form.get('username')?.errors?.['minlength']" class="error">Username must be at least 5 characters!</p>
+                </ng-container>
+                </div>
+
+                    <!-- <p >Username is required!</p>
+                    <p>Username must have at least 5 characters</p> -->
+                <div class="flex">
+                    <p>Email: </p>
+                    <input type="email" name="email" id="email"
+                    formControlName="email" [value]="profileDetails.email"
+                    >
+                    <ng-container *ngIf="form.get('email')?.touched">
+                        <p *ngIf="form.get('email')?.errors?.['required']" class="error">Email is required!</p>
+                        <p *ngIf="form.get('email')?.errors?.['emailValidtor']" class="error">Email is not valid</p>
+                    </ng-container>
+                </div>
+   
+                <button class="red-button" (click)="onCancel($event)">Cancel</button>
+                <button class="green-button">Save</button>
+            </form>
+        </ng-container>
+            
+    </div>
+</div>
+

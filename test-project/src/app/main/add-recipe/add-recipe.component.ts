@@ -18,6 +18,7 @@ export class AddRecipeComponent{
     if(form.invalid){
       return;
     }
+
     console.log(form.value)
 
 

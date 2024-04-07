@@ -1,0 +1,76 @@
+
+.new-recipe-border{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
+    margin: 2em auto 0;
+    text-align: center;
+    /* border: 2px solid purple; */
+    border-radius: 2em;
+    box-shadow: 12px 12px 20px 10px rgba(0, 0, 255, .2);
+    
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+    text-align: right;
+    gap: 1em;
+}
+
+form .header-background{
+    text-align: center;
+    margin: 1em;
+    color: rgb(128, 119, 247);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+label{
+    margin-right: 1em;
+}
+
+.new-recipe-title input{
+    border: 2px solid rgb(128, 119, 247);
+    border-radius: 2em;
+}
+
+.new-recipe-ingredients textarea{
+    border: 2px solid rgb(128, 119, 247);
+    border-radius: 2em;
+}
+
+.new-recipe-steps textarea{
+    border: 2px solid rgb(128, 119, 247);
+    border-radius: 2em;
+}
+
+
+.error{
+    color: red;
+}
+
+.new-recipe-buttons .cancel{
+    border: 2px solid rgb(128, 119, 247);
+    color:white;
+    padding: 1em 2em;
+    border-radius: 2em;
+    background-color: rgb(128, 119, 247);
+}
+
+.new-recipe-buttons .public{
+    border: 2px solid rgb(128, 119, 247);
+    color: white;
+    border-radius: 2em;
+    padding: 1em 2em;
+    background: rgb(139, 73, 245);
+    background: linear-gradient(90deg,  rgb(36, 3, 224) 0%, rgba(91, 58, 236, 0.956) 35%, rgb(66, 55, 161) 67%, rgb(121, 102, 230) 100%);
+
+}
+
+.new-recipe-buttons{
+    margin-top: 3em;
+    display: flex;
+    justify-content: space-between;
+}
