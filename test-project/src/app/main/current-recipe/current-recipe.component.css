@@ -1,0 +1,34 @@
+.container{
+    width: 60%;
+    height: 50%;
+    margin: 2em 0.2em;
+    padding: 0.5em ;
+    border:2px solid rgb(128, 119, 247);
+    border-radius: 1em;
+    border-radius: 2em;
+    box-shadow: 12px 12px 20px 10px rgba(0, 0, 255, .2);
+    position: relative;
+
+}
+.container h3{
+    color: rgb(128, 119, 247);
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.content{
+    display: flex;
+    gap: 5em;
+    
+}
+
+footer{
+    margin-top: 3em;
+}
+
+footer a{
+    text-align: right;
+    color: rgb(170, 169, 169);
+
+}

@@ -1,15 +1,22 @@
-<div class="container">
-    <h2>{{recipe.name}}</h2>
-    <!-- <div class="ph">
-        <img src="" alt="">
-    </div> -->
-    <!-- <p>{{recipe.ingredients}}</p>
-    <p>Septs: {{recipe.steps}}</p>
-    <p>{{recipe._createdOn | date}}</p> -->
+<div  class="container">
+    <h3 class="">{{recipe.name}}</h3>
+    <!-- <p *ngFor="let comment of recipe.comments">{{comment.content}}</p> -->
+    <div class="content">
+        <div class="ingredient-grup">
+            <h4>Ingredients: </h4>
+            <div class ="ingredinet" *ngFor="let ingredient of recipe.ingredients">{{ingredient}}</div>
+        </div>
+        <div class="steps-group">
+            <h4>Steps:</h4>
+            <div class="steps" *ngFor="let step of recipe.steps">{{step}}</div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>{{recipe._createdOn | date}}</p>
+        <a routerLink="/comments">Comments</a>
+    </footer>
+    
 
-    <p>Comment: </p>
 
-    <!-- <div *ngFor="let comment of comments" class="comments">
-        <p>{{comment.content}}</p>
-    </div> -->
 </div>

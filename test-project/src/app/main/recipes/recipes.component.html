@@ -4,7 +4,7 @@
 <section>
     <app-welcome *ngIf="!isLoggedIn"/>
     <div *ngFor="let recipe of recipes" class="recipe-list"> 
-        <h3><a [routerLink]="recipe._id">{{recipe.name}}</a></h3>
+        <h3><a [routerLink]="recipe._id">{{recipe.name | slice : 25}}</a></h3>
 
 
 

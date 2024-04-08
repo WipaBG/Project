@@ -8,6 +8,6 @@ export class authActivate implements CanActivate{
     constructor(private userService:UserService){}
     
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-        return this.userService.isLogged
+        return this.userService.isLogged;
     }
 }

@@ -3,7 +3,7 @@ import { User } from "./user"
 
 export interface Recipe{
     name: string,
-    imgUrl:string,
+    img:string,
     ingredients:string[],
     steps:string[],
     _id:string,

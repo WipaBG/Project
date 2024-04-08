@@ -12,32 +12,37 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getRecipes(){
-    const {apiUrl} = environment;
-    return this.http.get<Recipe[]>(`${apiUrl}/recipes`)
+    const {apiUrlData} = environment;
+    return this.http.get<Recipe[]>(`${apiUrlData}/recipes`)
   }
 
-  getComment(limit?: number){
-    const {apiUrl} = environment;
+  getComments(){
+    const {apiUrlData} = environment;
     
-    let url = `${apiUrl}/comments`
-    if(limit){
-      url += `?limit=${limit}`
-    }
+    let url = `${apiUrlData}/comments`
+  
 
     return this.http.get<Comment[]>(url)
 
   }
 
+
+  getConcreteComments(id:string){
+    const {apiUrlData} = environment;
+    return this.http.get<Comment>(`${apiUrlData}/comments/${id}`);
+  }
+
   getRecipe(id:string){
 
-    const {apiUrl} = environment;
-    return this.http.get<Recipe>(`${apiUrl}/recipes/${id}`)
+    const {apiUrlData} = environment;
+    return this.http.get<Recipe>(`${apiUrlData}/recipes/${id}`)
   }
 
   createRecipe(recipeName:string, recipeIngredients:string, recipeSteps:string){
-    const {apiUrl} = environment;
+    const {apiUrlData} = environment;
+
     const payload =  {recipeName, recipeIngredients, recipeSteps};
 
-    return this.http.post<Recipe>(`${apiUrl}/recipes`, payload)
+    return this.http.post<Recipe>(`${apiUrlData}/recipes`, payload)
   }
 }

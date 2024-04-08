@@ -9,10 +9,14 @@ import { SharedModule } from './shared/shared.module';
 import { UserModule } from './user/user.module';
 import { MainModule } from './main/main.module';
 import { appInterceptorProvider } from './app.interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { ErrorHandlingComponent } from './shared/error-handling/error-handling.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AuthenticateComponent,
+    ErrorHandlingComponent,
   ],
   imports: [
     BrowserModule,

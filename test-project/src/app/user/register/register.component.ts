@@ -41,7 +41,6 @@ export class RegisterComponent {
       this.router.navigate(['/recipes'])
     })
 
-    console.log(this.form.value)
   }
 
 }

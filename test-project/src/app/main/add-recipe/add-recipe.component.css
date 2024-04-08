@@ -32,16 +32,19 @@ label{
 }
 
 .new-recipe-title input{
+    padding: 0.4em;
     border: 2px solid rgb(128, 119, 247);
     border-radius: 2em;
 }
 
 .new-recipe-ingredients textarea{
+    padding: 0.5em;
     border: 2px solid rgb(128, 119, 247);
     border-radius: 2em;
 }
 
 .new-recipe-steps textarea{
+    padding: 0.5em;
     border: 2px solid rgb(128, 119, 247);
     border-radius: 2em;
 }

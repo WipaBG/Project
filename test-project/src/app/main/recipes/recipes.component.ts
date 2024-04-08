@@ -10,6 +10,7 @@ import { Recipe } from 'src/types/recipe';
 })
 export class RecipesComponent implements OnInit{
   recipes: Recipe[] = [];
+  comments: Comment[] = [];
   isLoading: boolean = true;
 
   constructor(private api: ApiService, private userService: UserService){}
@@ -30,20 +31,38 @@ export class RecipesComponent implements OnInit{
       console.log(recipes)
       this.recipes = recipes;
     })
+
+
+  
   }
 
 
-  // isLiked(recipe: Recipe){
-  //   const isLikedUser = recipe.likes.find((s)=> {
-  //     console.log({s, id: this.userService.user?.id})
 
-  //     return s===this.userService.user?.id;
-  //   });
-  //   console.log({isLikedUser: !!isLikedUser});
 
-  //   return !!isLikedUser;
+  // comments: Comment[] = [];
 
+  // constructor(private api:ApiService){}
+  
+  // ngOnInit(): void {
+  //   this.api.getComments().subscribe((comments)=>{
+  //     console.log(comments);
+  //     this.comments = comments
+  //   })
   // }
+
+
+
+  isLiked(recipe: Recipe){
+    const isLikedUser = recipe.likes.find((s)=> {
+      console.log({s, id: this.userService.user?.id})
+
+      return s===this.userService.user?.id;
+    });
+    console.log({isLikedUser: !!isLikedUser});
+
+    return !!isLikedUser;
+
+  }
 
 
 
