@@ -1,5 +1,4 @@
-<p>comments works!</p>
-<div *ngFor="let comment of comments">
-    <h3>{{comment.content}}</h3>
+<div *ngFor="let comment of comments" class="comments">
+    <p>Created on:{{comment._createdOn | date}} for {{comment.recipeId}}</p>
+    <p>{{comment.content}}</p>
 </div>
-

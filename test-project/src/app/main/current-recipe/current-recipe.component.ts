@@ -16,6 +16,7 @@ export class CurrentRecipeComponent implements OnInit{
 
 
   constructor(private apiService: ApiService, private activeRoute: ActivatedRoute){}
+
   
   ngOnInit(): void {
     this.activeRoute.params.subscribe((data)=>{
@@ -30,6 +31,8 @@ export class CurrentRecipeComponent implements OnInit{
       
      this.apiService.getComments().subscribe((comments)=>{
       this.comments = comments;
+      console.log({comments})
+
 
      })
 

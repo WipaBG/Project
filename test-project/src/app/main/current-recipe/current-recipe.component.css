@@ -23,12 +23,13 @@
     
 }
 
-footer{
-    margin-top: 3em;
+.comments-cotainer{
+    margin-top: 2em;
 }
+/* .comments-cotainer button{
+    margin-left: 5em;
+} */
 
-footer a{
-    text-align: right;
-    color: rgb(170, 169, 169);
-
+.comment p{
+    font-size: 14px;
 }

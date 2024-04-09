@@ -16,6 +16,7 @@ export class AddRecipeComponent{
    
 
   addRecipe(form:NgForm){
+    
     if(form.invalid){
       return;
     }

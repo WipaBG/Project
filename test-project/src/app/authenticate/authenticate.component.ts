@@ -24,4 +24,6 @@ export class AuthenticateComponent implements OnInit {
       })
   }
 
+  
+
 }

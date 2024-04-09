@@ -1,6 +1,7 @@
 <div  class="container">
     <h3 class="">{{recipe.name}}</h3>
-    <!-- <p *ngFor="let comment of recipe.comments">{{comment.content}}</p> -->
+    <p>Posted on: {{recipe._createdOn | date}}</p>
+
     <div class="content">
         <div class="ingredient-grup">
             <h4>Ingredients: </h4>
@@ -10,13 +11,27 @@
             <h4>Steps:</h4>
             <div class="steps" *ngFor="let step of recipe.steps">{{step}}</div>
         </div>
+
     </div>
     
-    <footer>
-        <p>{{recipe._createdOn | date}}</p>
-        <a routerLink="/comments">Comments</a>
-    </footer>
-    
+    <div class="comments-cotainer">
+        <p>Comments:</p> 
+        <button >Add comment</button>
+        
 
+        <div *ngFor="let comment of comments">
+
+            <ul *ngIf="comment.recipeId == recipe._id" class="comment">
+                    <li>
+                        <p>Created on:{{comment._createdOn | date}}</p>
+                        <p>{{comment.content}}</p>
+                    </li>
+        
+
+                </ul>
+        </div>
+    </div>
 
 </div>
+
+

@@ -5,7 +5,7 @@ export interface Comment{
     _id:string;
     _ownerId:User;
     content: string,
-    recipeId:Recipe;
+    recipeId:string;
     _createdOn:string;
     likes:string;
     updatedAt:string;

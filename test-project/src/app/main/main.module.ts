@@ -9,6 +9,7 @@ import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { CurrentRecipeComponent } from './current-recipe/current-recipe.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { FormsModule } from '@angular/forms';
+import { CommentsComponent } from './comments/comments.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     AddRecipeComponent,
     CurrentRecipeComponent,
     MainContentComponent,
+    CommentsComponent
 
     
   ],

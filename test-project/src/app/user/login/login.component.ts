@@ -12,6 +12,7 @@ import { EMAIL_DOMAINS } from 'src/constants';
 })
 export class LoginComponent {
   domains = EMAIL_DOMAINS;
+  private readonly TOKEN_KEY = 'auth_token';
 
   constructor(private userService:UserService, private router:Router){}
 
@@ -26,5 +27,9 @@ export class LoginComponent {
       this.router.navigate(['/recipes']);
 
     })
+
+ 
   }
+
+
 }
