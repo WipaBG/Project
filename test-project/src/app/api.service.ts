@@ -50,31 +50,27 @@ export class ApiService {
     const {apiUrlData} = environment;
 
     const payload =  {recipeName, recipeIngredients, recipeSteps};
-
     return this.http.post<Recipe>(`${apiUrlData}/recipes`, payload)
   }
 
 
-  
   // createRecipe(recipeName: string, recipeIngredients: string, recipeSteps: string): Observable<Recipe> {
-  //   const apiUrl = environment.apiUrlData;
-
-  //   // Check if the user is authenticated
-  //   if (!this.isAuthenticated()) {
-  //     throw new Error('User is not authenticated');
-  //   }
-
-  //   // Get the authentication token
-  //   const token = this.userService.getAuthToken();
-
+  //   const { apiUrlData } = environment;
   //   const payload = { recipeName, recipeIngredients, recipeSteps };
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({
-  //       'Content-Type': 'application/json',
-  //       'Authorization': `Bearer ${token}`
-  //     })
-  //   };
 
-  //   return this.http.post<Recipe>(`${apiUrl}/recipes`, payload, httpOptions);
+  //   // Get the access token from localStorage
+  //   const token = localStorage.getItem('token');
+
+  //   // Set the headers with the Authorization token
+  //   const headers = new HttpHeaders({
+  //     'Content-Type': 'application/json',
+  //     'X-Authorization': token || '' // If token is null, set it as empty string
+  //   });
+
+  //   // Make the HTTP POST request with headers
+  //   return this.http.post<Recipe>(`${apiUrlData}/recipes`, payload, { headers });
   // }
+
+
+
 }

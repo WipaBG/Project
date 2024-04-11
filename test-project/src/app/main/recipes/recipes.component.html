@@ -2,7 +2,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <section>
-    <app-welcome *ngIf="!isLoggedIn"/>
     <div *ngFor="let recipe of recipes" class="recipe-list"> 
         <h3><a [routerLink]="recipe._id">{{recipe.name | slice : 25}}</a></h3>
 
@@ -16,7 +15,6 @@
         <p>Likes : {{recipe.likes?.length || 0}}</p>
         <p>Created at: {{recipe._createdOn | date}}</p>
         <!-- <p>{{recipe.userId.username}}</p> -->
-    <hr/>
       
     </div>
 
